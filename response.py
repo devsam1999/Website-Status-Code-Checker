@@ -5,4 +5,10 @@ newurl= url.splitlines()
 for x in newurl:
 	print(x)
 	response = requests.get(x)
-	print(response.status_code)
+	scode=response.status_code
+	if scode == 200:
+		print("Website found")
+	elif scode == 404:
+		print("Website Not found")
+	else:
+		print("Website found")
